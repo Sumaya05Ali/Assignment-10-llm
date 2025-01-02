@@ -2,7 +2,7 @@
 
 import google.generativeai as genai
 from django.core.management.base import BaseCommand
-from property_data.models import Hotel, PropertySummary  # Replace 'your_app' with your actual app name
+from property_data.models import Hotel, PropertySummary  
 import time
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from google.api_core.exceptions import ResourceExhausted
