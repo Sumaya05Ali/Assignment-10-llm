@@ -26,3 +26,11 @@ class PropertySummary(models.Model):
 
     class Meta:
         db_table = 'property_summaries'    
+
+class PropertyReview(models.Model):
+    property_id = models.IntegerField(primary_key=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=1)
+    review = models.TextField()
+    
+    class Meta:
+        db_table = 'property_reviews'
