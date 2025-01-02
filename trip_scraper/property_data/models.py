@@ -19,3 +19,10 @@ class Hotel(models.Model):
 
     def __str__(self):
         return self.title
+    
+class PropertySummary(models.Model):
+    property_id = models.IntegerField()
+    summary = models.TextField()
+
+    class Meta:
+        db_table = 'property_summaries'    
