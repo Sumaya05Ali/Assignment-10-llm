@@ -72,6 +72,9 @@ You can run the Django CLI management command to process the property informatio
 
 ```bash
 docker-compose exec django python manage.py rewrite_property  AIzaSyAq32r9K9sjKDKfDfUWZ-CAG-PW8I4c0EM
+docker-compose exec django python manage.py generate_summaries AIzaSyAq32r9K9sjKDKfDfUWZ-CAG-PW8I4c0EM
+docker-compose exec django python manage.py generate_reviews   AIzaSyAq32r9K9sjKDKfDfUWZ-CAG-PW8I4c0EM
+
  ```
 
 9. Access the Django admin interface
