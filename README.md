@@ -71,7 +71,7 @@ This will scrape the property data and store it in the PostgreSQL database.
 You can run the Django CLI management command to process the property information and store the results:
 
 ```bash
-docker-compose exec django python manage.py rewrite_property
+docker-compose exec django python manage.py rewrite_property  AIzaSyAq32r9K9sjKDKfDfUWZ-CAG-PW8I4c0EM
  ```
 
 9. Access the Django admin interface
