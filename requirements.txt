@@ -1,0 +1,10 @@
+asgiref==3.8.1
+Django==5.1.4
+sqlparse==0.5.3
+scrapy
+scrapy-user-agents
+SQLAlchemy
+psycopg2-binary
+dj-database-url>=2.3.0
+google-generativeai==0.3.1
+tenacity==8.2.3

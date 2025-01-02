@@ -1,0 +1,42 @@
+#version: '3.8'
+
+services:
+  # PostgreSQL database service shared by Django and Scrapy
+  db:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shared_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  # Django service
+  django:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/shared_db
+    volumes:
+      - ./trip_scraper:/code 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: python manage.py runserver 0.0.0.0:8000
+
+  # Scrapy service
+  scraper:
+    build: .
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/shared_db
+    volumes:
+      - .:/code 
+    depends_on:
+      - db
+    command: scrapy crawl hotels
+
+
+volumes:
+  db_data:
